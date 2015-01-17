@@ -1,0 +1,24 @@
+{
+  "name": "StaticContentService",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Vlad Khazin",
+    "email": "vladimir.khazin@icssolutions.ca"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "restify": "~2.8.4",
+    "cors": "~2.5.2",
+    "config": "~1.10.0",
+    "q": "~1.1.2",
+    "mkdirp": "~0.5.0",
+    "path": "~0.11.14",
+    "bunyan": "~1.2.4",
+    "couchbase": "~2.0.4"
+  }
+}

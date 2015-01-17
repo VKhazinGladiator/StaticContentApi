@@ -1,0 +1,15 @@
+{
+// Configure your Run and Preview buttons here.
+
+// Run button configuration
+  "commands": {
+      "Run with Node" : "node index.js 3 4 5",
+      "Run Ungit": "ungit"
+  },
+
+// Preview button configuration
+  "preview": {
+        "Box URL": "http://{{domain}}:1433/",
+        "Visit Ungit": "http://{{domain}}:8448/#/repository?path=%2Fhome%2Fcodio%2Fworkspace"
+  }
+}

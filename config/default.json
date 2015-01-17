@@ -1,0 +1,13 @@
+{
+	"logging": {
+		"path": "./logs",
+		"rotationPeriod":"1d",
+		"rotationCount": 7
+	},
+    "couchbase": {
+        "host": "deve-api-static-content.shomi.io:8091",
+        "bucket": "default",
+        "staticContentDesignName": "staticcontent",
+        "staticContentViewName": "staticcontent"
+    }
+}

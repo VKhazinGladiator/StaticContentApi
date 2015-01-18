@@ -15,6 +15,9 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 server.use(restify.CORS());
 
+//Variables and constants
+var reservedProperties = ['Id', 'AppKey', 'Module', 'JsonType'];
+
 require('./logger').getLogger()
     .then(function(logger) {
 
@@ -70,7 +73,6 @@ require('./logger').getLogger()
         var result = execute(action, success, error);
     }
 
-    //getStaticContent
     function getStaticContent(req, res, next) {
 
         var action = function () {
@@ -79,31 +81,65 @@ require('./logger').getLogger()
             var segments = parsedUrl.pathname.split('/');
             
             if (segments.length < 3)
-                return next(new restify.errors.BadRequestError('Missing bucket and/or module!'));
+                return next(new restify.errors.BadRequestError('Missing appKey and/or module!'));
                 
             //res.send(segments);
             
-            var bucket = segments[1];
-            var _module = segments[2];
-            var key = parsedUrl.query.key;
+            var appKey = segments[1];
+            var appModule = segments[2];
+            var itemKey = parsedUrl.query.key;
             var lang = parsedUrl.query.lang;
             
-        var cbCluster = new couchbase.Cluster(config.couchbase.host);
-        var cbBucket = cbCluster.openBucket(config.couchbase.bucket); 
-        var cbQuery = couchbase.ViewQuery.from(config.couchbase.staticContentDesignName, config.couchbase.staticContentViewName).limit(1);
+            var queryKey = 'appKey:{appKey}::module:{module}'
+                            .replace('{appKey}', appKey.toLowerCase())
+                            .replace('{module}', appModule.toLowerCase());
+            
+            var cbCluster = new couchbase.Cluster(config.couchbase.host);
+            var cbBucket = cbCluster.openBucket(config.couchbase.bucket); 
+            var cbQuery = couchbase.ViewQuery.from(
+                    config.couchbase.staticContentDesignName, 
+                    config.couchbase.staticContentViewName
+                )
+                .key(queryKey)
+                .limit(1);
 
-        cbBucket.query(cbQuery, function(err, results) {
-                if (err) {
-                    logger.log(err);
-                    return next(new restify.errors.InternalServerError(err.message));
-                } else {
-                    if (results.length == 0) {
-                        return next(new restify.errors.NotFoundError('Bucket/module/key not found!'));
+            cbBucket.query(cbQuery, function(err, results) {
+                    if (err) {
+                        logger.log(err);
+                        return next(new restify.errors.InternalServerError(err.message));
                     } else {
-                        res.send(results[0]);
+                        if (results.length == 0) {
+                            return next(new restify.errors.NotFoundError('AppKey/module not found!'));
+                        } else {
+                            
+                            var value = results[0].value;
+                            
+                            //Remove system properties
+                            reservedProperties.forEach(function(propertyKey) {
+                                delete value[propertyKey];
+                            })
+                            
+                            //Remove other properties when itemKey is provided
+                            if (itemKey != null) {
+                                for (var propertyKey in value) {
+                                    if (itemKey !== propertyKey) {
+                                        delete value[propertyKey];
+                                    }
+                                }
+                            }
+                            
+                            //Remove other languages when lang is provided
+                            if (lang != null) {
+                                for (var propertyKey in value) {
+                                    value[propertyKey] = value[propertyKey].filter(function(languageElement){
+                                        return languageElement.LanguageCode === lang;                                       
+                                    });
+                                }
+                            }
+                            res.send(value);
+                        }
                     }
-                }
-            });
+                });
         };
 
         var success = function (err) {

@@ -9,3 +9,26 @@
 {"name":"StaticContentService","hostname":"family-student","pid":4964,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T20:20:41.418Z","v":0}
 {"name":"StaticContentService","hostname":"family-student","pid":4964,"level":30,"err":{"message":"failed to connect to bucket","name":"Error","stack":"Error: failed to connect to bucket\n    at Bucket.<anonymous> (/home/codio/workspace/node_modules/couchbase/lib/bucket.js:173:20)","code":23},"msg":"failed to connect to bucket","time":"2015-01-17T20:20:52.879Z","v":0}
 {"name":"StaticContentService","hostname":"family-student","pid":4964,"level":30,"err":{"message":"connect ETIMEDOUT","name":"Error","stack":"Error: connect ETIMEDOUT\n    at errnoException (net.js:901:11)\n    at Object.afterConnect [as oncomplete] (net.js:892:19)","code":"ETIMEDOUT"},"msg":"connect ETIMEDOUT","time":"2015-01-17T20:24:39.008Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":8942,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:05:36.146Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9514,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:24:40.945Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9520,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:27:54.358Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9526,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:28:22.816Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9532,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:29:10.092Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9538,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:29:40.401Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9544,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:30:50.152Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9550,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:32:57.676Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9556,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:33:43.983Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9562,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:34:21.455Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9568,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:36:08.687Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9576,"level":30,"msg":"listening on port: 1433","time":"2015-01-17T21:37:17.110Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9993,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:23:22.117Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":9999,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:24:24.318Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10007,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:28:08.848Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10013,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:33:10.227Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10019,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:38:49.885Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10025,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:40:26.225Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10032,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:40:55.424Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10039,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:41:49.808Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10045,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T00:42:50.126Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10188,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T01:24:53.073Z","v":0}
+{"name":"StaticContentService","hostname":"family-student","pid":10194,"level":30,"msg":"listening on port: 1433","time":"2015-01-18T01:26:46.920Z","v":0}
